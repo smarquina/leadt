@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
@@ -10,7 +12,7 @@ use App\Services\user\CreateUserService;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response as SFResponse;
 
-class CreateUserController extends Controller
+final class CreateUserController extends Controller
 {
     public function __invoke(CreateUserRequest $request, CreateUserService $service): JsonResponse
     {

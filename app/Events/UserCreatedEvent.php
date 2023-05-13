@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Events;
 
 use App\Models\User;
@@ -8,7 +10,7 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class UserCreatedEvent
+final readonly class UserCreatedEvent
 {
     use Dispatchable;
     use InteractsWithSockets;
@@ -17,7 +19,7 @@ class UserCreatedEvent
     /**
      * Create a new event instance.
      */
-    public function __construct(private readonly User $user) { }
+    public function __construct(private User $user) { }
 
     /**
      * @return \App\Models\User

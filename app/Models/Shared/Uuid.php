@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Shared;
 
 use Illuminate\Support\Str;
 
-class Uuid
+final readonly class Uuid
 {
     /**
      * @throws \RuntimeException
      */
-    public function __construct(private readonly string $uuid)
+    public function __construct(private string $uuid)
     {
         $this->validateUuid($this->uuid);
     }
